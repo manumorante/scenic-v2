@@ -16,6 +16,20 @@ export function useTrendingMovies(page = 1) {
   }
 }
 
+export function useTopRatedMovies(page = 1) {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['top-rated-movies', page],
+    queryFn: () => api.getTopRatedMovies(),
+    select: (data) => data.results ?? [],
+  })
+
+  return {
+    movies: data,
+    isLoading,
+    error,
+  }
+}
+
 export function useSearchMovies(query: string, page = 1) {
   const { data, isFetching, error } = useQuery<MoviesResponse, Error>({
     queryKey: ['search-movies', query, page],

@@ -3,9 +3,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import MainLayout from '@/Layout'
 
 const HomePage = lazy(() => import('@/pages/HomePage/HomePage'))
-const PopularMovieListPage = lazy(
-  () => import('@/pages/TrendingMovieListPage/TrendingMovieListPage'),
-)
+const TrendingMoviesPage = lazy(() => import('@/pages/TrendingMoviesPage/TrendingMoviesPage'))
+const TopRatedMoviesPage = lazy(() => import('@/pages/TopRatedMoviesPage/TopRatedMoviesPage'))
 
 const router = createBrowserRouter([
   {
@@ -17,11 +16,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/movies/trending',
-        element: <PopularMovieListPage />,
+        element: <TrendingMoviesPage />,
       },
       {
         path: '/movies/top-rated',
-        element: <PopularMovieListPage />,
+        element: <TopRatedMoviesPage />,
       },
     ],
   },

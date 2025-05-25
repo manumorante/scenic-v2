@@ -2,7 +2,7 @@ import { MovieGrid } from '@/components/movies'
 import { ErrorAlert } from '@/components/ui'
 import { useTrendingMovies } from '@/hooks/useMovies'
 
-export default function TrendingMovieListPage() {
+export default function TopRatedMoviePage() {
   const { movies, isLoading, error } = useTrendingMovies()
 
   if (error) return <ErrorAlert message={error.message} />

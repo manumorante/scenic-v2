@@ -8,6 +8,11 @@ export const api = {
     return fetcher<MoviesResponse>(endpoint)
   },
 
+  getTopRatedMovies: (): Promise<MoviesResponse> => {
+    const endpoint = buildApiUrl('/movie/top_rated')
+    return fetcher<MoviesResponse>(endpoint)
+  },
+
   searchMovies: ({
     query,
     page = 1,

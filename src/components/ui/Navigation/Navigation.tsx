@@ -19,6 +19,13 @@ export default function Navigation() {
       >
         Trending
       </NavLink>
+
+      <NavLink
+        className={({ isActive }) => cn(linkCn, { 'font-bold text-white': isActive })}
+        to="/movies/top-rated"
+      >
+        Top Rated
+      </NavLink>
     </nav>
   )
 }

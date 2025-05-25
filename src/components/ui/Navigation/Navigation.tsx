@@ -8,16 +8,16 @@ export default function Navigation() {
     <nav className="Navigation flex gap-3 w-full">
       <NavLink
         className={({ isActive }) => cn(linkCn, { 'font-bold text-white': isActive })}
-        to="/movies/popular"
+        to="/"
       >
-        Popular
+        Home
       </NavLink>
 
       <NavLink
         className={({ isActive }) => cn(linkCn, { 'font-bold text-white': isActive })}
-        to="/movies/top-rated"
+        to="/movies/trending"
       >
-        Top rated
+        Trending
       </NavLink>
     </nav>
   )

@@ -3,7 +3,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import MainLayout from '@/Layout'
 
 const HomePage = lazy(() => import('@/pages/HomePage/HomePage'))
-const PopularMovieListPage = lazy(() => import('@/pages/PopularMovieListPage/PopularMovieListPage'))
+const PopularMovieListPage = lazy(
+  () => import('@/pages/TrendingMovieListPage/TrendingMovieListPage'),
+)
 
 const router = createBrowserRouter([
   {
@@ -14,7 +16,7 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: '/movies/popular',
+        path: '/movies/trending',
         element: <PopularMovieListPage />,
       },
       {

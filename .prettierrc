@@ -3,5 +3,6 @@
   "semi": false,
   "singleQuote": true,
   "printWidth": 100,
-  "importOrderParserPlugins": ["typescript", "jsx"]
+  "importOrderParserPlugins": ["typescript", "jsx"],
+  "importOrder": ["^react", "<THIRD_PARTY_MODULES>", "^@/(.*)$", "^[./]"]
 }

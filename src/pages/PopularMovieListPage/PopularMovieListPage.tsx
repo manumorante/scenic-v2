@@ -1,3 +1,9 @@
+import MovieGrid from '@/components/movies/MovieGrid/MovieGrid'
+
 export default function PopularMovieListPage() {
-  return <div>PopularMovieListPage</div>
+  return (
+    <div>
+      <MovieGrid isLoading />
+    </div>
+  )
 }

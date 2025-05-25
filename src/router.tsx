@@ -1,6 +1,6 @@
-import MainLayout from '@/Layout'
 import { lazy } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router'
+import MainLayout from '@/Layout'
 
 const HomePage = lazy(() => import('@/pages/HomePage/HomePage'))
 const PopularMovieListPage = lazy(() => import('@/pages/PopularMovieListPage/PopularMovieListPage'))
@@ -14,7 +14,11 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: 'popular',
+        path: '/movies/popular',
+        element: <PopularMovieListPage />,
+      },
+      {
+        path: '/movies/top-rated',
         element: <PopularMovieListPage />,
       },
     ],

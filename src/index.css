@@ -1,11 +1,18 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primary: var(--color-emerald-500);
-  --color-secondary: var(--color-orange-500);
-  --color-gray-light: var(--color-zinc-200);
-  --color-gray: var(--color-zinc-500);
-  --color-gray-dark: var(--color-zinc-800);
+  --color-primary: #00b020;
+  --color-primary-dark: #03951e;
+  --color-dark-0: #000000;
+  --color-dark-1: #14171a;
+  --color-dark-2: #191e23;
+  --color-dark-3: #1e232a;
+  --color-light-0: #ffffff;
+  --color-light-1: #c8d4e0;
+  --color-light-2: #aabbcc;
+  --color-light-3: #667788;
+  --color-light-4: #3c4b5a;
+
   --animate-shimmer: shimmer 3s linear infinite;
 
   @keyframes shimmer {
@@ -20,7 +27,7 @@
 
 @layer base {
   body {
-    @apply bg-zinc-100 text-zinc-500;
+    @apply text-light-2 bg-dark-3;
   }
 }
 

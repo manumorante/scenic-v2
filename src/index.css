@@ -1,1 +1,84 @@
 @import 'tailwindcss';
+
+@theme {
+  --color-primary: var(--color-emerald-500);
+  --color-secondary: var(--color-orange-500);
+  --color-gray-light: var(--color-zinc-200);
+  --color-gray: var(--color-zinc-500);
+  --color-gray-dark: var(--color-zinc-800);
+  --animate-shimmer: shimmer 3s linear infinite;
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-100 text-zinc-500;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .button {
+    /* Layout */
+    @apply inline-flex items-center justify-center gap-2;
+    @apply h-9 px-3 py-1.5;
+
+    /* Typography */
+    @apply text-sm font-medium text-white;
+
+    @apply rounded-lg bg-zinc-900;
+    @apply transition-colors outline-none;
+    @apply cursor-pointer touch-none select-none;
+
+    /* State */
+    @apply focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 md:hover:bg-zinc-700;
+    @apply disabled:pointer-events-none disabled:opacity-50;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .button.secondary {
+    @apply font-medium text-zinc-900;
+    @apply border border-zinc-300 bg-zinc-50;
+    /* State */
+    @apply md:hover:border-zinc-300 md:hover:bg-white md:hover:text-zinc-800;
+  }
+
+  /* Tags */
+  .tag {
+    @apply px-2 py-0.5;
+    @apply text-sm text-zinc-900;
+    @apply rounded-lg border border-zinc-300;
+  }
+
+  /* Skeleton */
+  .skeleton-pulse {
+    @apply rounded bg-zinc-100;
+    background-image: linear-gradient(
+      to right,
+      var(--color-zinc-100) 0%,
+      var(--color-zinc-200) 20%,
+      var(--color-zinc-100) 100%
+    );
+    background-size: 200% 100%;
+    animation: var(--animate-shimmer);
+  }
+}
+
+@layer utilities {
+  .rounded-base {
+    @apply rounded-lg;
+  }
+
+  .main-container {
+    @apply mx-auto flex w-full max-w-5xl min-w-80;
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}

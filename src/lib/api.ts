@@ -13,13 +13,7 @@ export const api = {
     return fetcher<MoviesResponse>(endpoint)
   },
 
-  searchMovies: ({
-    query,
-    page = 1,
-  }: {
-    query: string
-    page?: number
-  }): Promise<MoviesResponse> => {
+  searchMovies: ({ query, page }: { query: string; page: number }): Promise<MoviesResponse> => {
     const endpoint = buildApiUrl('/search/movie', { query, page })
     return fetcher<MoviesResponse>(endpoint)
   },

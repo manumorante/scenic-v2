@@ -3,15 +3,14 @@ import type { Movie } from '@/types'
 
 type Props = {
   title: Movie['title']
-  src: Movie['poster_path']
+  src?: Movie['poster_path']
 }
 
 export default function MovieCard({ title, src }: Props) {
-  const image = `${config.imgBaseURL}/w500${src}`
+  const image = src ? `${config.imgBaseURL}/w500${src}` : ''
   return (
-    <div>
-      <img className="w-full h-auto poster-aspec-ratio" src={image} alt="" />
-      <div className="leading-tight">{title}</div>
+    <div className="poster-aspec-ratio bg-black">
+      {image && <img className="w-full h-auto" src={image} alt={title} />}
     </div>
   )
 }

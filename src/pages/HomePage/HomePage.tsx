@@ -1,14 +1,16 @@
 import { MovieGrid } from '@/components/movies'
 import { ErrorAlert } from '@/components/ui'
-import { useTrendingMovies } from '@/hooks/useMovies'
+import { useSearchMovies } from '@/hooks/useMovies'
+import { useMoviesStore } from '@/stores/moviesStore'
 
 export default function HomePage() {
-  const { movies, isLoading, error } = useTrendingMovies()
+  const searchQuery = useMoviesStore((state) => state.searchQuery)
+  const { movies, isLoading, error } = useSearchMovies(searchQuery)
 
-  if (error) return <ErrorAlert message={error.message} />
+  if (error) return <ErrorAlert message={error} />
+
   return (
     <div>
-      <h1>Trending this week</h1>
       <MovieGrid isLoading={isLoading} movies={movies} />
     </div>
   )
